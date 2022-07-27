@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from '../components/Layout';
 import Home from '../containers/Home';
 import Checkout from '../containers/Checkout';
 import Information from '../containers/Information';
@@ -15,7 +16,7 @@ const App = () => {
 	return (
 		// <AppContext.Provider value={ initialState }>
 			<BrowserRouter>
-				{/* <Layout> */}
+				<Layout>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/Checkout" element={<Checkout />} />
@@ -24,7 +25,7 @@ const App = () => {
 						<Route path="/Checkout/Success" element={<Success />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
-				{/* </Layout> */}
+				</Layout>
 			</BrowserRouter>
 		// </AppContext.Provider>
 	);
