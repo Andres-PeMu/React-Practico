@@ -1,10 +1,11 @@
 import React from 'react';
+import '../styles/components/app.css'
 
 const App = () => {
     return (
-        <div>
+        <h1>
             hola mundo
-        </div>
+        </h1>
     );
 };
 

@@ -5,7 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
 	entry: './src/index.js',
 	devServer:{
+		// contentBase: path.join(__dirname, 'dist'),
         historyApiFallback: true,
+		compress: true,
+		port: 3005,
+
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -42,16 +46,12 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.s[ac]ss$/i,
+				test: /\.css$/,
 				use: [
-					"style-loader",
-					"css-loader",
 					{
-                        loader: "sass-loader",
-                        options:{
-                            implementation: require("sass"),
-                        }
-                    },
+						loader: MiniCssExtractPlugin.loader,
+					},
+					"css-loader",
 				],
 			}
 		]
